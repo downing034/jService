@@ -8,6 +8,12 @@ class GameIdsController < ApplicationController
 
   # GET /game_ids/1
   def show
+    @game_id = GameId.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @game_id }
+    end
   end
 
   # GET /game_ids/new
